@@ -40,3 +40,8 @@ body > .container {
 code {
     font-size: 80%;
 }
+
+#map {
+    height: 400px;
+    width: 100%;
+}
