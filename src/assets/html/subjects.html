@@ -8,14 +8,12 @@
         <table class="table table-hover">
             <thead>
             <tr>
-                <th>#</th>
                 <th>Name</th>
                 <th>Code</th>
             </tr>
             </thead>
             <tbody>
             <tr style="cursor: pointer;" ui-sref="subjectDetail({id:subject.id})" ng-repeat="subject in subjects | filter:searchText track by subject.id">
-                <td>{{subject.id}}</td>
                 <td>{{subject.name}}</td>
                 <td>{{subject.code}}</td>
             </tr>

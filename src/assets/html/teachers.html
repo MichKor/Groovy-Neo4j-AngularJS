@@ -8,7 +8,6 @@
         <table class="table table-hover">
             <thead>
             <tr>
-                <th>#</th>
                 <th>Academic title</th>
                 <th>Name</th>
                 <th>Surname</th>
@@ -17,7 +16,6 @@
             </thead>
             <tbody>
             <tr style="cursor: pointer;" ui-sref="teacherDetail({id:teacher.id})" ng-repeat="teacher in teachers | filter:searchText track by teacher.id">
-                <td>{{teacher.id}}</td>
                 <td>{{teacher.academic_title}}</td>
                 <td>{{teacher.name}}</td>
                 <td>{{teacher.lastName}}</td>
