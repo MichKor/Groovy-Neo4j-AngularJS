@@ -5,7 +5,7 @@ import org.neo4j.ogm.annotation.Relationship
 class Department extends Entity {
 
     String name
-    String name2
+    String description
 
     @Relationship(type = "STAFF", direction = Relationship.OUTGOING)
     Set<Teacher> teachers
@@ -21,16 +21,16 @@ class Department extends Entity {
         this.courses = new HashSet<>()
     }
 
-    Department(String name, String name2) {
+    Department(String name, String description) {
         this.name = name
-        this.name2 = name2
+        this.description = description
     }
 
     @Override
     String toString() {
         return "Department{" +
                 "name='" + name + '\'' +
-                ", name2='" + name2 + '\'' +
+                ", description='" + description + '\'' +
                 ", teachers=" + teachers +
                 ", course=" + courses +
                 '}'

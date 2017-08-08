@@ -1,51 +1,47 @@
 create (hf:School {name : 'Uniwersytet w Bialymstoku'})
 
-create (hf)-[:DEPARTMENT]->(MATINF:Department {name : 'Matematyka i Informatyka', name2 :'cos tam'})
-create (hf)-[:DEPARTMENT]->(BIOL:Department {name : 'Biologia', name2 :'cos tam2'})
+create (hf)-[:DEPARTMENT]->(MAT_INF:Department {name : 'Mathematics and Informatics', description :'matematyka i informatyka'})
+create (hf)-[:DEPARTMENT]->(BIOL_CHEM:Department {name : 'Biology and Chemistry', description :'biologia i chemia'})
+create (hf)-[:DEPARTMENT]->(EKO_ZRZ:Department {name : 'Economics and management', description :'ekonomia i zarzadzanie'})
+create (hf)-[:DEPARTMENT]->(FILO:Department {name : 'Philology', description :'filologia'})
+create (hf)-[:DEPARTMENT]->(FIZ:Department {name : 'Physics', description :'fizyka'})
+create (hf)-[:DEPARTMENT]->(HIS_SOC:Department {name : 'History and Sociology', description :'historia i socjologia'})
+create (hf)-[:DEPARTMENT]->(PG_PS:Department {name : 'Pedagogy and Psychology', description :'pedagogika i psychologia'})
+create (hf)-[:DEPARTMENT]->(PRA:Department {name : 'Law',  description:'prawo'})
+create (hf)-[:DEPARTMENT]->(EKO_INF_WIL:Department {name : 'Economics and informatics in Vinius', description :'ekonomia i informatyka w wilnie'})
 
-create (MATINF)-[:CLASSES]->(rok3MAT:Class {name : 'Trzeci rok MatInf', types :'Infa'})
-create (BIOL)-[:CLASSES]->(rok3BIOL:Class {name : 'Trzeci rok Biol', types :'Biologia'})
+create (MAT_INF)-[:CLASSES]->(year1MAT:Class {name : 'First year', types :'Mathematics'})
+create (MAT_INF)-[:CLASSES]->(year2MAT:Class {name : 'Second year', types :'Mathematics'})
+create (MAT_INF)-[:CLASSES]->(year3MAT:Class {name : 'Third year', types :'Mathematics'})
 
+create (BIOL_CHEM)-[:CLASSES]->(year1BIOL:Class {name : 'First year', types :'Biology'})
+create (BIOL_CHEM)-[:CLASSES]->(year2BIOL:Class {name : 'Second year', types :'Biology'})
+create (BIOL_CHEM)-[:CLASSES]->(yearBIOL:Class {name : 'Third year', types :'Biology'})
 
-create (hf)-[:STAFF]->(DT:Teacher {academic_title :'Dr', name : 'Dominik', lastName :'Tomaszuk', pesel :'85'})
-create (hf)-[:STAFF]->(MR:Teacher {academic_title :'Dr', name : 'Mariusz', lastName :'Rybnik', pesel :'85'})
+create (EKO_ZRZ)-[:CLASSES]->(year1ZRZ:Class {name : 'First year', types :'Management'})
+create (EKO_ZRZ)-[:CLASSES]->(year2ZRZ:Class {name : 'Second year', types :'Management'})
+create (EKO_ZRZ)-[:CLASSES]->(year3ZRZ:Class {name : 'Third year', types :'Management'})
 
-create (hf)-[:STAFF]->(AN:Teacher {academic_title :'Mgr', name : 'Anna', lastName :'Mynyk', pesel :'75'})
-create (hf)-[:STAFF]->(MB:Teacher {academic_title :'Mgr', name : 'Marta', lastName :'Glabas', pesel :'75'})
+create (FILO)-[:CLASSES]->(year1FILO:Class {name : 'First year', types :'English philology'})
+create (FILO)-[:CLASSES]->(year2FILO:Class {name : 'Second year', types :'English philology'})
+create (FILO)-[:CLASSES]->(year3FILO:Class {name : 'Third year', types :'English philology'})
 
-create (hf)-[:STUDENT]->(_001:Student { firstName :'Michal', lastName :'Korwel', pesel :'95'})
-create (hf)-[:STUDENT]->(_002:Student { firstName :'Adrian', lastName :'Rusin', pesel :'95'})
+create (FIZ)-[:CLASSES]->(year1FIZ:Class {name : 'First year', types :'Physics'})
+create (FIZ)-[:CLASSES]->(year2FIZ:Class {name : 'Second year', types :'Physics'})
+create (FIZ)-[:CLASSES]->(year3FIZ:Class {name : 'Third year', types :'Physics'})
 
-create (hf)-[:STUDENT]->(_003:Student { firstName :'Justyna', lastName :'Kapelewska', pesel :'95'})
-create (hf)-[:STUDENT]->(_004:Student { firstName :'Kasia', lastName :'Kap', pesel :'98'})
+create (HIS_SOC)-[:CLASSES]->(year1HIS:Class {name : 'First year', types :'History'})
+create (HIS_SOC)-[:CLASSES]->(year2HIS:Class {name : 'Second year', types :'History'})
+create (HIS_SOC)-[:CLASSES]->(year3HIS:Class {name : 'Third year', types :'History'})
 
-create (rok3MAT)-[:STUDENT]->(_001)
-create (rok3MAT)-[:STUDENT]->(_002)
+create (PG_PS)-[:CLASSES]->(year1PG:Class {name : 'First year', types :'Psychology'})
+create (PG_PS)-[:CLASSES]->(year2PG:Class {name : 'Second year', types :'Psychology'})
+create (PG_PS)-[:CLASSES]->(year3PG:Class {name : 'Third year', types :'Psychology'})
 
-create (rok3BIOL)-[:STUDENT]->(_003)
-create (rok3BIOL)-[:STUDENT]->(_004)
+create (PRA)-[:CLASSES]->(year1PRA:Class {name : 'First year', types :'Law'})
+create (PRA)-[:CLASSES]->(year2PRA:Class {name : 'Second year', types :'Law'})
+create (PRA)-[:CLASSES]->(year3PRA:Class {name : 'Third year', types :'Law'})
 
-
-create (progIN:Subject {name : 'Programowanie w Internecie', code :'123'})
-create (progOB:Subject {name : 'Programowanie Obiektowe', code :'456'})
-
-create (ana:Subject {name : 'Anatomia', code :'123456'})
-create (foto:Subject {name : 'Fotosynteza', code :'456123'})
-
-create (progOB)-[:SUBJECT]->(rok3MAT)
-create (progIN)-[:SUBJECT]->(rok3MAT)
-
-create (ana)-[:SUBJECT]->(rok3BIOL)
-create (foto)-[:SUBJECT]->(rok3BIOL)
-
-create (DT)-[:TEACHER]->(progIN)
-create (MR)-[:TEACHER]->(progOB)
-
-create (AN)-[:TEACHER]->(ana)
-create (MB)-[:TEACHER]->(foto)
-
-create (MATINF)-[:STAFF]->(DT)
-create (MATINF)-[:STAFF]->(MR)
-
-create (BIOL)-[:STAFF]->(AN)
-create (BIOL)-[:STAFF]->(MB)
+create (EKO_INF_WIL)-[:CLASSES]->(year1MAT_VI:Class {name : 'First year', types :'Mathematics'})
+create (EKO_INF_WIL)-[:CLASSES]->(year2MAT_VI:Class {name : 'Second year', types :'Mathematics'})
+create (EKO_INF_WIL)-[:CLASSES]->(year3MAT_VI:Class {name : 'Third year', types :'Mathematics'})

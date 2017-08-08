@@ -10,13 +10,13 @@
             <thead>
             <tr>
                 <th>Name</th>
-                <th>Name2</th>
+                <th>Description</th>
             </tr>
             </thead>
             <tbody>
             <tr style="cursor: pointer;" ui-sref="departmentDetail({id:department.id})" ng-repeat="department in departments | filter:searchText track by department.id">
                 <td>{{department.name}}</td>
-                <td>{{department.name2}}</td>
+                <td>{{department.description}}</td>
             </tr>
             </tbody>
         </table>
