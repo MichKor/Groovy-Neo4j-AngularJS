@@ -1,7 +1,6 @@
 package school.domain
 
 import com.fasterxml.jackson.annotation.JsonProperty
-import com.sun.org.apache.regexp.internal.RE
 import org.neo4j.ogm.annotation.NodeEntity
 import org.neo4j.ogm.annotation.Relationship
 
