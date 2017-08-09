@@ -6,12 +6,9 @@ import org.neo4j.ogm.annotation.Relationship
 
 @NodeEntity(label = "Class")
 class Course extends Entity {
-
-    @JsonProperty("year")
-    String year
-
     String direction
     String institute
+    String degree
 
     @JsonProperty("subject")
     @Relationship(type = "SUBJECT_TAUGHT", direction = Relationship.INCOMING)
@@ -28,9 +25,9 @@ class Course extends Entity {
     String toString() {
         return "Course{" +
                 "id=" + getId() +
-                ", year='" + year + '\'' +
                 ", direction='" + direction + '\'' +
                 ", institute='" + institute + '\'' +
+                ", degree='" + degree + '\'' +
                 ", student=" + students +
                 ", subject=" + subject +
                 ", students=" + enrollments.size() +

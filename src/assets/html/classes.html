@@ -9,17 +9,17 @@
         <table class="table table-hover">
             <thead>
             <tr>
-                <th>Year</th>
                 <th>Direction</th>
                 <th>Institute</th>
+                <th>Degree of study</th>
             </tr>
             </thead>
             <tbody>
             <tr style="cursor: pointer;" ui-sref="classDetail({id:class.id})"
                 ng-repeat="class in classes | filter:searchText track by class.id">
-                <td>{{class.year}}</td>
                 <td>{{class.direction}}</td>
                 <td>{{class.institute}}</td>
+                <td>{{class.degree}}</td>
             </tr>
             </tbody>
         </table>
@@ -42,9 +42,9 @@
                 <div class="modal-body">
 
                     <div class="form-group">
-                        <label>Name</label>
+                        <label>Direction</label>
                         <input type="text" class="form-control"
-                               ng-model="class.year">
+                               ng-model="class.direction">
                     </div>
                 </div>
                 <div class="modal-footer">
