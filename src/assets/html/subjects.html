@@ -10,13 +10,11 @@
             <thead>
             <tr>
                 <th>Name</th>
-                <th>Code</th>
             </tr>
             </thead>
             <tbody>
             <tr style="cursor: pointer;" ui-sref="subjectDetail({id:subject.id})" ng-repeat="subject in subjects | filter:searchText track by subject.id">
                 <td>{{subject.name}}</td>
-                <td>{{subject.code}}</td>
             </tr>
             </tbody>
         </table>
